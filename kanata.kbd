@@ -1,0 +1,41 @@
+(defsrc)
+
+(deflayermap (base-layer)
+  caps    @my-caps
+  Tab     @my-tab
+)
+
+(deflayermap (symbols-layer)
+  f      S-9 
+  j      S-0
+  d      BracketRight 
+  k      Backslash
+  g      S-BracketRight
+  h      S-Backslash
+  a      Backquote
+  s      S-Backquote
+  Space  S-Minus
+)
+
+(deflayermap (numbers-layer)
+  a     1 
+  s     2
+  d     3
+  f     4
+  g     5
+  h     6
+  j     7
+  k     8
+  l     9
+  Semicolon 0
+)
+
+
+(defalias
+    sym       (layer-while-held symbols-layer)
+    num       (layer-while-held numbers-layer)
+    my-caps   (tap-hold 100 100 esc @sym)
+    my-tab    (tap-hold 100 100 Tab @num)
+)
+
+(defcfg process-unmapped-keys (all-except lctl ralt))
