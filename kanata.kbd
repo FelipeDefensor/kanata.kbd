@@ -3,7 +3,9 @@
 (deflayermap (base-layer)
   caps    @my-caps
   Tab     @my-tab
+  ShiftRight  @cmd
 )
+
 
 (deflayermap (symbols-layer)
   f      S-9 
@@ -30,10 +32,26 @@
   Semicolon 0
 )
 
+(deflayermap (command-layer)
+  1     F1
+  2     F2
+  3     F3
+  4     F4
+  5     F5
+  6     F6
+  7     F7
+  8     F8
+  9     F9
+  0     F10
+  -     F11
+  +     F12
+)
+
 
 (defalias
     sym       (layer-while-held symbols-layer)
     num       (layer-while-held numbers-layer)
+    cmd	      (layer-while-held command-layer)
     my-caps   (tap-hold 100 100 esc @sym)
     my-tab    (tap-hold 100 100 Tab @num)
 )
