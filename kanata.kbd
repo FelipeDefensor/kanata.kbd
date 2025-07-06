@@ -2,21 +2,34 @@
 
 (deflayermap (base-layer)
   caps    @my-caps
+  F13     @my-caps
   Tab     @my-tab
   ShiftRight  @cmd
 )
 
 
-(deflayermap (symbols-layer)
-  f      S-9 
-  j      S-0
-  d      BracketRight 
-  k      Backslash
-  g      S-BracketRight
-  h      S-Backslash
+(deflayermap (caps-layer)
+
+ ;; Arrows
+  h      ArrowLeft
+  j      ArrowDown
+  k      ArrowUp
+  l      ArrowRight
+
+  ;; Quotes
   a      Backquote
   s      S-Backquote
-  Space  S-Minus
+
+  Space  S-Minus  ;; underline
+
+  ;; Delimiters
+  n      S-9  ;; (
+  m      S-0  ;; )
+  Comma  BracketRight  ;; [
+  Period Backslash  ;;  ]
+  u      S-BracketRight  ;; {
+  i      S-Backslash  ;; }
+  
 )
 
 (deflayermap (numbers-layer)
@@ -49,10 +62,10 @@
 
 
 (defalias
-    sym       (layer-while-held symbols-layer)
+    cps       (layer-while-held caps-layer)
     num       (layer-while-held numbers-layer)
     cmd	      (layer-while-held command-layer)
-    my-caps   (tap-hold 100 100 esc @sym)
+    my-caps   (tap-hold 100 100 esc @cps)
     my-tab    (tap-hold 100 100 Tab @num)
 )
 
