@@ -23,10 +23,10 @@
   Space  S-Minus  ;; underline
 
   ;; Delimiters
-  n      S-9  ;; (
-  m      S-0  ;; )
-  Comma  BracketRight  ;; [
-  Period Backslash  ;;  ]
+  m      S-9  ;; (
+  Comma  S-0  ;; )
+  Period BracketRight  ;; [
+  Slash  Backslash  ;;  ]
   u      S-BracketRight  ;; {
   i      S-Backslash  ;; }
   
