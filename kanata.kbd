@@ -1,3 +1,5 @@
+;; see key codes at https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
+
 (defsrc)
 
 (deflayermap (base-layer)
@@ -20,7 +22,6 @@
   a      Backquote
   s      S-Backquote
 
-  Space  S-Minus  ;; underline
 
   ;; Delimiters
   m      S-9  ;; (
@@ -29,6 +30,12 @@
   Slash  Backslash  ;;  ]
   u      S-BracketRight  ;; {
   i      S-Backslash  ;; }
+
+  ;; Others
+  Space  	S-Minus  ;; underline
+  Semicolon 	Backspace ;; ç
+  p	 	Delete
+  q		Enter
   
 )
 
