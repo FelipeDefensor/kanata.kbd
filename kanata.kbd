@@ -31,6 +31,11 @@
   u      S-BracketRight  ;; {
   i      S-Backslash  ;; }
 
+  ;; Copy and paste
+  c		C-c	
+  v		C-v	
+  x		C-x
+
   ;; Others
   Space  	S-Minus  ;; underline
   Semicolon 	Backspace ;; ç
