@@ -41,20 +41,20 @@
   Semicolon 	Backspace ;; ç
   p	 	Delete
   q		Enter
-  
 )
 
-(deflayermap (numbers-layer)
-  a     1 
-  s     2
-  d     3
-  f     4
-  g     5
-  h     6
-  j     7
-  k     8
-  l     9
-  Semicolon 0
+(deflayermap (numbers-symbols-layer)
+  q     1 
+  w     2
+  e     3
+  r     4
+  t     5
+  y     6
+  u     7
+  i     8
+  o     9
+  p	0
+  s	(unicode ß)
 )
 
 (deflayermap (command-layer)
@@ -74,11 +74,26 @@
 
 
 (defalias
-    cps       (layer-while-held caps-layer)
-    num       (layer-while-held numbers-layer)
-    cmd	      (layer-while-held command-layer)
-    my-caps   (tap-hold 100 100 esc @cps)
-    my-tab    (tap-hold 100 100 Tab @num)
+    cps		(layer-while-held caps-layer)
+    num		(layer-while-held numbers-symbols-layer)
+    cmd		(layer-while-held command-layer)
+    my-caps	(tap-hold 100 100 esc @cps)
+    my-tab	(tap-hold 100 100 Tab @num)
 )
 
 (defcfg process-unmapped-keys (all-except lctl ralt))
+
+
+;; Below is an example of how virtual keys and sequences
+;; can be used for text expansion
+(defvirtualkeys
+  hlw (macro h e l l o spc w o r l d)
+)
+
+(defalias
+    mac		(on-press tap-vkey hlw)
+)
+
+(deflayermap example-layer
+  z		@mac
+)
