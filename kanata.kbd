@@ -54,7 +54,10 @@
   i     8
   o     9
   p	0
+
+  ;; Deutsch / German
   s	(unicode ß)
+  4	(unicode €)
 )
 
 (deflayermap (command-layer)
